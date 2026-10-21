@@ -1,0 +1,5 @@
+streamlit
+scikit-learn==1.6.1
+nltk
+joblib
+emoji==2.16.0
