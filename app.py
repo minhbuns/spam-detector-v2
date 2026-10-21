@@ -23,7 +23,7 @@ if st.button("Check") and text.strip() and model_choice:
     model = model_w if model_choice == 'Word model' else model_p
     tdf = tdf_w if model_choice == 'Word model' else tdf_p
     
-    clean_input = tdf.transform(clean_text(text))
+    clean_input = tdf.transform([clean_text(text)])
     p = model.predict_proba(clean_input)[0][1]
     if p >= 0.4:
         st.error(f"Spam ({p:.1%} probability)")
