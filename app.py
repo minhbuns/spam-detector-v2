@@ -14,7 +14,7 @@ model_p, model_w, tdf_p, tdf_w = load()
 st.title("Spam Detector V2")
 
 st.text("Attention, all model runs on threshold 0.4 not 0.5 as V1")
-model_choice = st.ratio("We have 2 model, word and phrase, please choose 1.",
+model_choice = st.radio("We have 2 model, word and phrase, please choose 1.",
                  ['Word model', 'Phrase model'])
 
 text = st.text_area("Paste an email:", height=200)
