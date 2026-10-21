@@ -64,8 +64,9 @@ def clean_text(text):
     text = clean_html(text)
     text = clean_number(text)
     text = clean_email_address(text)
+    
     text = text.lower()
+    text = clean_special_characters(text)
     text = normalize_word(text)
     text = remove_stopwords(text)
-    text = clean_special_characters(text)
     return text
