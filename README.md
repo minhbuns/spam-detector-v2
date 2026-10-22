@@ -2,7 +2,8 @@
 Spam email detector using TF-IDF and Logistic Regression,
 
 **UPDATED**
-Now it has better preprocessing and now can detect phishing too. Still only work in English
+Now it has better preprocessing and now can detect somne 
+phishing too. Still only work in English
 
 dataset link:
 https://huggingface.co/datasets/Deysi/spam-detection-dataset/viewer/default/train?row=3
