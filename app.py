@@ -2,14 +2,10 @@ import joblib
 import streamlit as st
 from preprocess import clean_text
 
-@st.cache_resource
-def load():
-    return (joblib.load("model_email.joblib"), 
-            joblib.load("model_sms.joblib"),
-            joblib.load("vec_email.joblib"), 
-            joblib.load("vec_sms.joblib"))
-
-model_email, model_sms, vec_email, vec_sms = load()
+vec_email = joblib.load('vec_email.joblib')
+vec_sms = joblib.load('vec_sms.joblib')
+model_email = joblib.load('model_email.joblib')
+model_sms = joblib.load('model_sms.joblib')
 
 st.title("Spam Detector V2.5")
 
