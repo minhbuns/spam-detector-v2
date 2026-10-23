@@ -1,9 +1,9 @@
 # spam-detector-v2.5
 
 **UPDATED**
-Now it has better preprocessing and now can detect somne 
-phishing too. Still only work in English
 
+Now it has better preprocessing and now can detect phishing and put to spam.
+a new model called sms added to detect sms only.
 dataset link:
 
 
