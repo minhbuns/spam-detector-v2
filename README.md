@@ -12,3 +12,9 @@ https://www.kaggle.com/datasets/akshatsharma2/the-biggest-spam-ham-phish-email-d
 https://www.kaggle.com/datasets/marcelwiechmann/enron-spam-data
 
 (completeSpamAssassin.csv) https://www.kaggle.com/datasets/aminulislamamin/spam-email-detection-dataset-for-deep-learning/data?select=enronSpamSubset.csv 
+
+(for sms)
+https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset
+
+Fully preprocessed data frame is here:
+https://kaggle.com/datasets/eef98e08df00833a69d17f33c253a451b415de137ff51a2411c1c3352fb73b25
