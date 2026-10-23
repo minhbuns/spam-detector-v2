@@ -21,7 +21,7 @@ text = st.text_area("Paste an email:", height=200)
 if st.button("Check") and text.strip() and model_choice:
     model = model_email if model_choice == 'Email model' else model_sms
     vec = vec_email if model_choice == 'Email model' else vec_sms
-
+    print(vec)
     clean_input = vec.transform([clean_text(text)])
     p = model.predict_proba(clean_input)[0][1]
     if p >= 0.5:
