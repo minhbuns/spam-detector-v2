@@ -1,14 +1,15 @@
 import joblib
 import streamlit as st
 from preprocess import clean_text
-for name in [
-    "vec_email.joblib",
-    "vec_sms.joblib",
-    "model_email.joblib",
-    "model_sms.joblib",
-]:
-    obj = joblib.load(name)
-    print(f"{name}: {type(obj)}")
+def load():
+    return (
+        joblib.load("model_email.joblib"),
+        joblib.load("model_sms.joblib"),
+        joblib.load("vec_email.joblib"),
+        joblib.load("vec_sms.joblib")
+    )
+
+model_email, model_sms, vec_email, vec_sms = load()
 
 st.title("Spam Detector V2.5")
 
@@ -20,8 +21,8 @@ text = st.text_area("Paste an email:", height=200)
 if st.button("Check") and text.strip() and model_choice:
     model = model_email if model_choice == 'Email model' else model_sms
     vec = vec_email if model_choice == 'Email model' else vec_sms
-    clean_input = vec.transform([clean_text(text)])
-    p = model.predict_proba(clean_input)[0][1]
+    clean_input = vec.transform([clean_text(text)]) if type(vec) != type([1,2]) else vec[0].transform([clean_text(text)])
+    p = model.predict_proba(clean_input)[0][1] 
     if p >= 0.5:
         st.error(f"Spam ({p:.1%} probability)")
     else:
