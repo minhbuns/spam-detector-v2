@@ -1,22 +1,14 @@
 import joblib
 import streamlit as st
 from preprocess import clean_text
-
-vec_email = joblib.load('vec_email.joblib')
-vec_sms = joblib.load('vec_sms.joblib')
-model_email = joblib.load('model_email.joblib')
-model_sms = joblib.load('model_sms.joblib')
-
-files = [
+for name in [
     "vec_email.joblib",
     "vec_sms.joblib",
     "model_email.joblib",
-    "model_sms.joblib"
-]
-
-for filename in files:
-    obj = joblib.load(filename)
-    print(f"{filename}: {type(obj)}")
+    "model_sms.joblib",
+]:
+    obj = joblib.load(name)
+    print(f"{name}: {type(obj)}")
 
 st.title("Spam Detector V2.5")
 
