@@ -1,8 +1,8 @@
 # spam-detector-v2.5
 
-Spam email/sms detector using TF-IDF and Logistic Regression.
-
-2 models available right now
+**UPDATED**
+Now it has better preprocessing and now can detect somne 
+phishing too. Still only work in English
 
 dataset link:
 
