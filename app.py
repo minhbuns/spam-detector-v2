@@ -22,7 +22,7 @@ if st.button("Check") and text.strip() and model_choice:
     model = model_email if model_choice == 'Email model' else model_sms
     vec = vec_email if model_choice == 'Email model' else vec_sms
     clean_input = vec.transform([clean_text(text)]) if type(vec) != type([1,2]) else vec[0].transform([clean_text(text)])
-    p = model.predict_proba(clean_input)[0][1] 
+    p = model.predict_proba(clean_input)[0][1] if type(model) != type([1,2]) else  model[0].predict_proba(clean_input)[0][1]
     if p >= 0.5:
         st.error(f"Spam ({p:.1%} probability)")
     else:
