@@ -7,6 +7,17 @@ vec_sms = joblib.load('vec_sms.joblib')
 model_email = joblib.load('model_email.joblib')
 model_sms = joblib.load('model_sms.joblib')
 
+files = [
+    "vec_email.joblib",
+    "vec_sms.joblib",
+    "model_email.joblib",
+    "model_sms.joblib"
+]
+
+for filename in files:
+    obj = joblib.load(filename)
+    print(f"{filename}: {type(obj)}")
+
 st.title("Spam Detector V2.5")
 
 model_choice = st.radio("We have 2 model, email and sms, please choose 1.",
